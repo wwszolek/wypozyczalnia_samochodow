@@ -22,7 +22,7 @@ public:
 	Auto(std::string, std::string, std::string, std::string, std::string, double, int, karta_dostepu*);
 	bool wypozycz();
 	bool zwroc();
-	std::ostream& operator<<(std::ostream&);
+	std::string show();
 	bool czy_Wypozyczone();
 };
 

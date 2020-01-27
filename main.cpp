@@ -1,5 +1,8 @@
 #include <iostream>
 
+#include "baza_danych.h"
+#include "auto.h"
+
 void wypozycz_samochod() {
 	
 }
@@ -16,12 +19,16 @@ void panel_administratora() {
 
 }
 
+
 int main() {
 	std::cout << "Witaj w systemie wypozyczalni samochodow" << std::endl;
 
+	baza_danych::dodaj(Auto());
+	baza_danych::wyswietl_liste_aut();
+
 	int choice = 0;
 	while (true) {
-		std::cout << "Dokonaj wyboru:\n(1) Wypozycz samochod\n(2) Zglos usterke\n(3)Pozostaw samochod" << std::endl;
+		std::cout << "Dokonaj wyboru:\n(1) Wypozycz samochod\n(2) Zglos usterke\n(3) Pozostaw samochod" << std::endl;
 		std::cin >> choice;
 		switch (choice) {
 		case 1:

@@ -33,9 +33,9 @@ bool Auto::zwroc() {
 	}
 }
 
-std::ostream& Auto::operator<<(std::ostream& out) {
-	out << marka << " " << model << "\n" << typ << " " << kolor << "\n" << nr_rejestracyjny << "\nMoc silnika: " << moc_silnika << "\nLiczba miejsc:" << liczba_miejsc;
-	return out;
+
+std::string Auto::show() {
+	return marka + " " + model + "\n" + typ + " " + kolor + "\n" + nr_rejestracyjny + "\nMoc silnika: " + std::to_string(moc_silnika) + "\nLiczba miejsc:" + std::to_string(liczba_miejsc);
 }
 
 bool Auto::czy_Wypozyczone() {

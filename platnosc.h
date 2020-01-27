@@ -2,13 +2,15 @@
 #define PLATNOSC_H
 
 #include <string>
+#include "wypozyczenie.h"
 
 class platnosc {
 	int kwota;
 
+	wypozyczenie* _wypozyczenie;
 public:
 	platnosc();
-	platnosc(int);
+	platnosc(int, wypozyczenie*);
 
 	bool wykonaj();
 };
@@ -19,7 +21,7 @@ class platnosc_przelewem : public platnosc {
 
 public:
 	platnosc_przelewem();
-	platnosc_przelewem(int, std::string, int);
+	platnosc_przelewem(int, wypozyczenie*, std::string, int);
 
 	bool wykonaj();
 };
@@ -29,7 +31,7 @@ class platnosc_karta :public platnosc {
 
 public:
 	platnosc_karta();
-	platnosc_karta(int, int);
+	platnosc_karta(int, wypozyczenie*, int);
 
 	bool wykonaj();
 };
