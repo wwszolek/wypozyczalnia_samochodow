@@ -17,21 +17,21 @@ public:
 
 class platnosc_przelewem : public platnosc {
 	std::string tytul;
-	int numer_konta;
+	std::string numer_konta;
 
 public:
 	platnosc_przelewem();
-	platnosc_przelewem(int, wypozyczenie*, std::string, int);
+	platnosc_przelewem(int, wypozyczenie*, std::string, std::string);
 
 	bool wykonaj();
 };
 
 class platnosc_karta :public platnosc {
-	int numer;
+	std::string numer;
 
 public:
 	platnosc_karta();
-	platnosc_karta(int, wypozyczenie*, int);
+	platnosc_karta(int, wypozyczenie*, std::string);
 
 	bool wykonaj();
 };

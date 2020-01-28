@@ -31,6 +31,7 @@ public:
 	static void usun(platnosc_karta*);
 
 	static void wyswietl_liste_aut();
+	static Auto* get_auto(int);
 };
 
 #endif

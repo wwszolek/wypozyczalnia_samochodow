@@ -121,9 +121,20 @@ void baza_danych::usun(platnosc_karta* a) {
 
 void baza_danych::wyswietl_liste_aut(){
 	auto it = auta.begin();
-	while (it != auta.end()) {
-		std::cout << (*it)->show() << std::endl;
 
-		it++;
+	for (int i = 1; it != auta.end(); it++, i++) {
+		if (!(*it)->czy_Wypozyczone()) {
+			std::cout << i << ". ";
+			std::cout << (*it)->show() << std::endl;
+		}
 	}
+}
+
+Auto* baza_danych::get_auto(int i) {
+	auto it = auta.begin();
+
+	for (int j=0; j < i - 1; j++) 
+		it++;
+
+	return *it;
 }

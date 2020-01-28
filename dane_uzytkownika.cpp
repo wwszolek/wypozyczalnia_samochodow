@@ -8,7 +8,7 @@ dane_uzytkownika::dane_uzytkownika() {}
 dane_uzytkownika::dane_uzytkownika(std::string mail_kontaktowy) : mail_kontaktowy(mail_kontaktowy) {}
 
 void dane_uzytkownika::wyslij_maila(std::string tresc) {
-	std::cout << "Wysy³am maila o tresci:\n" << tresc << "\nNa maila: " << mail_kontaktowy << std::endl;
+	std::cout << "Wysylam maila o tresci:\n" << tresc << "\nNa maila: " << mail_kontaktowy << std::endl;
 }
 
 
