@@ -84,7 +84,18 @@ void zglos_usterke() {
 }
 
 void pozostaw_samochod() {
+	baza_danych::wyswietl_liste_wyp();
 
+	std::cout << "Ktore wypozyczenie chcesz zakonczyc?" << std::endl;
+	int wyp;
+	std::cin >> wyp;
+
+	auto w = baza_danych::get_wyp(wyp);
+	w->zakoncz();
+	auto a = w->getAuto();
+	a->zwroc();
+
+	std::cout << "Dziekujemy za uslugi\n" << std::endl;
 }
 
 void panel_administratora() {
@@ -92,9 +103,17 @@ void panel_administratora() {
 }
 
 
+void dodaj_auto(const std::string& r, const std::string& t, const std::string& k, const std::string& mr, const std::string& md, double moc, int liczba) {
+	karta_dostepu kd;
+	kd.zaprogramuj(654);
+	auto kkk = baza_danych::dodaj(kd);
+	baza_danych::dodaj(Auto(r, t, k, mr, md, moc, liczba, kkk));
+}
+
 int main() {
-	baza_danych::dodaj(Auto());
-	baza_danych::dodaj(Auto());
+	dodaj_auto("KR 72726", "Osobowy", "Czarny", "BWM", "3", 280, 5);
+	dodaj_auto("LZ 12312", "Dostawczy", "Bialy", "Ford", "Transit", 120, 3);
+	dodaj_auto("WA 72542", "Sportowy", "Czerwony", "Ferrari", "458", 560, 2);
 
 
 	std::cout << "Witaj w systemie wypozyczalni samochodow" << std::endl;
@@ -102,7 +121,7 @@ int main() {
 
 	int choice = 0;
 	while (true) {
-		std::cout << "Dokonaj wyboru:\n(1) Wypozycz samochod\n(2) Zglos usterke\n(3) Pozostaw samochod" << std::endl;
+		std::cout << "Dokonaj wyboru:\n(1) Wypozycz samochod\n(2) Pozostaw samochod" << std::endl;
 		std::cin >> choice;
 		
 		switch (choice) {
@@ -110,9 +129,6 @@ int main() {
 			wypozycz_samochod();
 			break;
 		case 2:
-			zglos_usterke();
-			break;
-		case 3:
 			pozostaw_samochod();
 			break;
 		case 17:

@@ -20,6 +20,10 @@ public:
 	void rozpocznij();
 	void zakoncz();
 	int oblicz_kwote(int);
+
+	std::string show();
+
+	Auto* getAuto();
 };
 
 #endif

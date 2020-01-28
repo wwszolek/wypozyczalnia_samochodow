@@ -31,7 +31,12 @@ public:
 	static void usun(platnosc_karta*);
 
 	static void wyswietl_liste_aut();
+	static void wyswietl_liste_aut_wyp();
+	static void wyswietl_liste_wyp();
+
 	static Auto* get_auto(int);
+	static wypozyczenie* get_wyp(int);
+
 };
 
 #endif

@@ -130,10 +130,39 @@ void baza_danych::wyswietl_liste_aut(){
 	}
 }
 
+void baza_danych::wyswietl_liste_aut_wyp() {
+	auto it = auta.begin();
+
+	for (int i = 1; it != auta.end(); it++, i++) {
+		if ((*it)->czy_Wypozyczone()) {
+			std::cout << i << ". ";
+			std::cout << (*it)->show() << std::endl;
+		}
+	}
+}
+
+void baza_danych::wyswietl_liste_wyp() {
+	auto it = wypozyczenia.begin();
+
+	for (int i = 1; it != wypozyczenia.end(); it++, i++) {
+		std::cout << i << ". ";
+		std::cout << (*it)->show() << std::endl;
+	}
+}
+
 Auto* baza_danych::get_auto(int i) {
 	auto it = auta.begin();
 
 	for (int j=0; j < i - 1; j++) 
+		it++;
+
+	return *it;
+}
+
+wypozyczenie* baza_danych::get_wyp(int i) {
+	auto it = wypozyczenia.begin();
+
+	for (int j = 0; j < i - 1; j++)
 		it++;
 
 	return *it;

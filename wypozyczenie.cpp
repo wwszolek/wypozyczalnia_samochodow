@@ -19,3 +19,13 @@ void wypozyczenie::zakoncz() {
 int wypozyczenie::oblicz_kwote(int liczba_dni) {
 	return liczba_dni * 10000;
 }
+
+std::string wypozyczenie::show() {
+	std::cout<< klient->show() + "\n" + _auto->show();
+
+	return "aaa";
+}
+
+Auto* wypozyczenie::getAuto() {
+	return _auto;
+}

@@ -23,3 +23,7 @@ dane_klienta::dane_klienta() {}
 
 dane_klienta::dane_klienta(std::string mail, std::string imie, std::string nazwisko, std::string nr_dowodu) :
 	dane_uzytkownika(mail), imie(imie), nazwisko(nazwisko), numer_dowodu_osobistego(nr_dowodu) {}
+
+std::string dane_klienta::show() {
+	return "Tomasz Kowalski";
+}

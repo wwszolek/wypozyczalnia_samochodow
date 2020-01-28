@@ -31,6 +31,8 @@ class dane_klienta : public dane_uzytkownika {
 public:
 	dane_klienta();
 	dane_klienta(std::string, std::string, std::string, std::string);
+
+	std::string show();
 };
 
 #endif
